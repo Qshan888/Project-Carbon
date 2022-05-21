@@ -8,7 +8,6 @@ function CarbonIndex() {
   const [selectDeparture, setSelectedDeparture] = React.useState(undefined)
   const [selectDestination, setSelectedDestination] = React.useState(undefined)
   const [carbonflight, setCarbonflight] = React.useState(undefined)
-  // const [requestData, setRequestData] = React.useState(undefined)
 
   const [productCarbon, setProductCarbon] = React.useState(undefined)
   const [selectedProduct, setSelectedProduct] = React.useState(undefined)
@@ -19,7 +18,6 @@ function CarbonIndex() {
 
   React.useEffect(() => {
     async function getData() {
-
 
       // API for Airport
 
@@ -44,11 +42,6 @@ function CarbonIndex() {
       console.log(uniqueAirports)
 
       setAirport(uniqueAirports)
-
-      
-
-      
-          
 
     }
     getData()
@@ -90,7 +83,10 @@ function CarbonIndex() {
 
   }
 
+
   React.useEffect(() => {
+
+    // API for Products
 
     async function getProductCarbon() {
 
@@ -126,18 +122,12 @@ function CarbonIndex() {
     getProductCarbon()
   }, [])
 
-  // function findTarget(e) {
-  //   console.log(airport[e.target.selectedIndex].code)
-  // }
-
 
   function calculateProduct(e) {
     console.log(e.target.value)
     console.log(productCarbon[e.target.selectedIndex])
     setSelectedProduct(productCarbon[e.target.selectedIndex])
   }
-
-
 
   return <>
 
@@ -199,10 +189,10 @@ function CarbonIndex() {
     <div>
       {selectedProduct ? 
         <div>
-          <p className='title'>Your Flight Emission equals to {selectedProduct.name} produced in {selectedProduct.location} with a Carbon footprint of {selectedProduct.footprint}kg</p>
+          <p className='title'>The Product you will compare with is {selectedProduct.name} produced in {selectedProduct.location} with a Carbon footprint of {selectedProduct.footprint}kg</p>
           <div>
             {carbonflight ?
-              <p>Your flight equals to the footprint of {carbonflight.data.attributes.carbon_kg/selectedProduct.footprint} {selectedProduct.name} </p>
+              <p className='title'>Your flight equals to the footprint of {carbonflight.data.attributes.carbon_kg/selectedProduct.footprint} {selectedProduct.name} </p>
               : <p> Please compute flight Carbon Emission to compare</p>
             }
           </div>
