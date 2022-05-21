@@ -124,7 +124,7 @@ function CarbonIndex() {
       {carbonflight ? 
         <div>
           <p>Your Flight will hurt the enviroment with Carbon Emissions of {carbonflight.data.attributes.carbon_kg}kg</p>
-          <p>The distance for your flight is {carbonflight.data.attributes.distance_valze}km</p>
+          <p>The distance for your flight is {carbonflight.data.attributes.distance_value}km</p>
         </div>
           : <p>Calculate your flight emission and distance</p>
       }
