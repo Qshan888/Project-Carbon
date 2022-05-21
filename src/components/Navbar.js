@@ -16,6 +16,9 @@ function Navbar() {
               <Link to="/CarbonAPI" className="navbar-item">
                 Carbon Emission Calculator
               </Link>
+              <Link to="/About" className="navbar-item">
+                About
+              </Link>
             </div>
           </div>
         </nav>
